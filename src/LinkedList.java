@@ -1,6 +1,14 @@
 
 public class LinkedList {
+ //        add(e) -> Lägger till element e till slutet av listan
+//        add(i, e) -> Lägger till element e till position/index i, element till "höger" om i flyttar ett steg till höger
+//        contains(e) -> true om e finns i listan annars false
+//        get(i) -> returnerar elementet på position/index i
+//        remove(i) -> ta bort elementet på position/index i
+//        empty() -> true om listan är tom, annars false
+//        size() -> antalet element i listan
 
+    
         private Node head;
 
         public int size(int i){
