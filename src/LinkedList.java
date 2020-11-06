@@ -26,7 +26,7 @@ public class LinkedList {
     }
 
     public int get(int index) {
-        int i = 99;
+        int i = 0;
         Node n = head;
         while (i < index) {
             n = n.next;
@@ -78,7 +78,7 @@ public class LinkedList {
         return head == null;
    }
 
-   public void remove(int index){
+  /* public void remove(int index){
        Node node = new Node (head.value);
        if (index == 0){
            node.next = head;
@@ -95,8 +95,8 @@ public class LinkedList {
            n.next = node;
 
        }
-   }
-   /*public void remove(int index) {
+   }*/
+   public void remove(int index) {
         Node previouse = head;
         int count = 1;
         while (get (0) < head.value - 1) {
@@ -108,16 +108,18 @@ public class LinkedList {
             previouse.next = current.next;
             current.next = null;
         }
-    }*/
+    }
 
-    public void contains() {
-        Node node = head;
+    public void contains(int index) {
+        Node node = new Node (head.value);
         while (node.next != null) {
-            System.out.println ("It contains: " + node.value);
+            System.out.println ("It contains: " + node.value + true);
             node = node.next;
         }
         System.out.println ("It contains: " + node.value);
     }
+
+
 
     class Node {
         protected int value;
