@@ -36,7 +36,7 @@ public class LinkedList {
     }
 
 
-    public int add(int element) {
+    public void add(int element) {
         if (head == null) {
             head = new Node (element);
         } else {
@@ -46,41 +46,57 @@ public class LinkedList {
             }
             n.next = new Node (element);
         }
-        return element;
     }
-        /*public void add(int index, int value){
-           Node n = head;
-            while( < index) {
-                n = n.next;
-                i++;
-            } if (i > n.value){
-                n.nextremove (index);
+        public void add(int index, int value){
+           Node node = new Node (value);
+           if (index == 0){
+               node.next = head;
+               head = node;
+           } else{
+               int i = 0;
+               Node n = head;
+               while(i < index -1){
+                   n = n.next;
+                   i++;
 
-            } else{
-                add (index,value);
-            }
+               }
+               node.next = n.next;
+               n.next = node;
 
-            return
-        }*/
-
-    public boolean empty() {
-        boolean size = false;
-
-        try {
-            if (head == null) {
-                return size = true;
-
-            } else {
-                return false;
-            }
-
-        } catch (Exception NullPointerExceptio) {
-            System.out.println ("Something went wrong here:(");
+           }
         }
-        return empty ();
-    }
+        public void prettyPrint(){
+            System.out.print("Linkedlist -> ");
+            Node n = head;
+            while(n != null) {
+                System.out.print ("Node ("+n.value+")->");
+                n = n.next;
+            }
+        }
 
-    public void remove(int index) {
+   public boolean empty() {
+        return head == null;
+   }
+
+   public void remove(int index){
+       Node node = new Node (head.value);
+       if (index == 0){
+           node.next = head;
+           head = node;
+       } else{
+           int i = 0;
+           Node n = head;
+           while(i < index -1){
+               n = n.next;
+               i++;
+
+           }
+           node.next = n.next;
+           n.next = node;
+
+       }
+   }
+   /*public void remove(int index) {
         Node previouse = head;
         int count = 1;
         while (get (0) < head.value - 1) {
@@ -92,7 +108,7 @@ public class LinkedList {
             previouse.next = current.next;
             current.next = null;
         }
-    }
+    }*/
 
     public void contains() {
         Node node = head;
