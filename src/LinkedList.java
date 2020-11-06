@@ -9,7 +9,7 @@ public class LinkedList {
 
 
     public void Add_last (int element){
-        if (Nod == null){
+        if (Nod){
             Nod e = new Nod();
             e.value=element;
             head=e;
@@ -35,14 +35,14 @@ public class LinkedList {
             size++ ;
 
         }
-        public int get(int index){
+        public void get(){
             int i = 0;
             Nod n = head;
             while (i < index){
                 n = n.next;
                 i++;
             }
-            return n.value;
+            return;
         }
 
         public void remove ( Nod i )
