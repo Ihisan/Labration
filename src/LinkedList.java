@@ -1,61 +1,24 @@
 import org.w3c.dom.Node;
 
+//        add(e) -> Lägger till element e till slutet av listan
+//        add(i, e) -> Lägger till element e till position/index i, element till "höger" om i flyttar ett steg till höger
+//        contains(e) -> true om e finns i listan annars false
+//        get(i) -> returnerar elementet på position/index i
+//        remove(i) -> ta bort elementet på position/index i
+//        empty() -> true om listan är tom, annars false
+//        size() -> antalet element i listan
+
 public class LinkedList {
 
-    Nod head=null;
-    Nod tail=null;
-    int size = 0;
+    private Node head;
 
-
-
-    public void Add_last (int element){
-        if (Nod){
-            Nod e = new Nod();
-            e.value=element;
-            head=e;
-            tail=e;
-            size++;
-
-        } else {
-            Nod e= new Nod() ;
-            e.value= element ;
-
-            tail.next = e ;
-            tail= e ;
-            size++ ;
-
-
-
-        }
-        public void Add2 (int element ,int index ){
-            Nod e =new Nod();
-            e.value = element ;
-            e.next=e;
-            head= e ;
-            size++ ;
-
-        }
-        public void get(){
-            int i = 0;
-            Nod n = head;
-            while (i < index){
-                n = n.next;
-                i++;
-            }
-            return;
-        }
-
-        public void remove ( Nod i )
-        Nod i = head ;
-        while (h.)
-    }
-    public int size(){
+    public int size(int index){
         if (head == null){
-            return 0;
+            return index;
         }
         else{
             int i = 0;
-            Nod n = head;
+            Node n = head;
             while(n.next != null){
                 n = n.next;
                 i++;
@@ -64,4 +27,93 @@ public class LinkedList {
         }
     }
 
+    public int get(int index){
+        int i = 99;
+        Node n = head;
+        while (i < index){
+            n = n.next;
+            i++;
+        }
+        return n.value;
+    }
+
+
+    public int add(int v) {
+        if (head == null) {
+            head = new Node (v);
+        }
+        else {
+            Node n = head;
+            while (n.next != null){
+                n = n.next;
+            }
+            n.next = new Node (v);
+        }
+        return v;
+    }
+        /*public void add(int index, int value){
+            int i = Integer.parseInt (null);
+           Node n = head;
+            while(i < index) {
+                n = n.next;
+                i++;
+            } if (i > n.value){
+                n.nextremove (index);
+
+            } else{
+                add (index,value);
+            }
+
+            return
+        }*/
+
+    public boolean empty(){
+        boolean size = false;
+        Node node = head;
+
+        try{
+            while (true){
+                contains ();
+                break;
+
+            } if (node == null){
+                return size;
+
+            }
+        }
+        catch (Exception NullPointerExceptio) {
+            System.out.println ("Something went wrong here:(");
+        }
+        return empty ();
+    }
+
+    public void remove(int index) {
+        Node previouse = head;
+        int count = 1;
+        while(count < head.value -1){
+            previouse = previouse.next;
+            count++;
+        }
+        {
+            Node current = previouse.next;
+            previouse.next = current.next;
+            current.next = null;
+        }
+    }
+    public void contains(){
+        Node node = head;
+        while(node.next!=null){
+            System.out.println ("It contains: " +node.value);
+            node = node.next;
+        }
+        System.out.println ("It contains: " +node.value);
+    }
+    class Node{
+        protected int value;
+        protected Node next;
+
+        public Node(int v){
+            this.value = v;
+        }
+    }
 }
