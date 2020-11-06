@@ -1,4 +1,3 @@
-import org.w3c.dom.Node;
 
 //        add(e) -> Lägger till element e till slutet av listan
 //        add(i, e) -> Lägger till element e till position/index i, element till "höger" om i flyttar ett steg till höger
@@ -38,23 +37,22 @@ public class LinkedList {
     }
 
 
-    public int add(int v) {
+    public int add(int element) {
         if (head == null) {
-            head = new Node (v);
+            head = new Node (element);
         }
         else {
             Node n = head;
             while (n.next != null){
                 n = n.next;
             }
-            n.next = new Node (v);
+            n.next = new Node (element);
         }
-        return v;
+        return element;
     }
         /*public void add(int index, int value){
-            int i = Integer.parseInt (null);
            Node n = head;
-            while(i < index) {
+            while( < index) {
                 n = n.next;
                 i++;
             } if (i > n.value){
@@ -73,18 +71,16 @@ public class LinkedList {
 
         try{
             while (true){
-                contains ();
+                size (0);
                 break;
 
-            } if (node == null){
-                return size;
-
             }
+
         }
         catch (Exception NullPointerExceptio) {
             System.out.println ("Something went wrong here:(");
         }
-        return empty ();
+        return size;
     }
 
     public void remove(int index) {
