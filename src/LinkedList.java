@@ -78,24 +78,6 @@ public class LinkedList {
         return head == null;
    }
 
-  /* public void remove(int index){
-       Node node = new Node (head.value);
-       if (index == 0){
-           node.next = head;
-           head = node;
-       } else{
-           int i = 0;
-           Node n = head;
-           while(i < index -1){
-               n = n.next;
-               i++;
-
-           }
-           node.next = n.next;
-           n.next = node;
-
-       }
-   }*/
    public void remove(int index) {
         Node previouse = head;
         int count = 1;
