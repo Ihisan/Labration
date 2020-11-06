@@ -65,14 +65,54 @@ public class LinkedList {
             return
         }*/
 
-    public boolean Empty()
-    {
-        Boolean Nod;
-        if (Nod==null)
-            return Nod=true;
-        else
-            return Nod=false;
+    public boolean empty(){
+        boolean size = false;
+
+        try{
+            if (head == null){
+                return size = true;
+
+            } else{
+                return false;
+            }
+
+        }
+        catch (Exception NullPointerExceptio) {
+            System.out.println ("Something went wrong here:(");
+        }
+        return empty ();
     }
+
+    public void remove(int index) {
+        Node previouse = head;
+        int count = 1;
+        while(get (0) < head.value -1){
+            previouse = previouse.next;
+            count++;
+        }
+        {
+            Node current = previouse.next;
+            previouse.next = current.next;
+            current.next = null;
+        }
+    }
+    public void contains(){
+        Node node = head;
+        while(node.next!=null){
+            System.out.println ("It contains: " +node.value);
+            node = node.next;
+        }
+        System.out.println ("It contains: " +node.value);
+    }
+    class Node{
+        protected int value;
+        protected Node next;
+
+        public Node(int v){
+            this.value = v;
+        }
+    }
+}
 
 
 
