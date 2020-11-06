@@ -65,9 +65,13 @@ public class LinkedList {
             return
         }*/
 
-    public void Empty( )
+    public boolean Empty()
     {
-        head.next = null;
+        Boolean Nod;
+        if (Nod==null)
+            return Nod=true;
+        else
+            return Nod=false;
     }
 
 
