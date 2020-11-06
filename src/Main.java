@@ -13,5 +13,6 @@ public class Main {
         list.remove (2);//list.remove (2);//list.remove(3);
         System.out.println("list size is : " + list.size(0)); //-> 3
         list.empty ();//list.empty() -> false
+        list.contains ();
     }
 }
