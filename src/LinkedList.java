@@ -10,6 +10,7 @@
 public class LinkedList {
 
     private Node head;
+    private Node tail;
 
     public int size(int index) {
         if (head == null) {
@@ -78,25 +79,11 @@ public class LinkedList {
         return head == null;
    }
 
-  /* public void remove(int index){
-       Node node = new Node (head.value);
-       if (index == 0){
-           node.next = head;
-           head = node;
-       } else{
-           int i = 0;
-           Node n = head;
-           while(i < index -1){
-               n = n.next;
-               i++;
-
-           }
-           node.next = n.next;
-           n.next = node;
-
-       }
-   }*/
-   public void remove(int index) {
+    public int pop(){
+        remove (0);
+        return get (0);
+    }
+   public int remove(int index) {
         Node previouse = head;
         int count = 1;
         while (get (0) < head.value - 1) {
@@ -108,9 +95,11 @@ public class LinkedList {
             previouse.next = current.next;
             current.next = null;
         }
-    }
 
-    public void contains(int index) {
+       return count;
+   }
+
+    public void contains() {
         Node node = new Node (head.value);
         while (node.next != null) {
             System.out.println ("It contains: " + node.value + true);
@@ -120,10 +109,31 @@ public class LinkedList {
     }
 
 
+    public void push(int value) {
+        add (0,value);
+
+
+       }
+
+    public int peek(){
+
+        return get (0);
+    }
+
+    public void prettyPrint2(){
+        System.out.print("\nLinkedlist After Push,Pop,Peek -> ");
+        Node n = head;
+        while(n != null) {
+            System.out.print ("Node ("+n.value+")->");
+            n = n.next;
+        }
+    }
+
 
     class Node {
         protected int value;
         protected Node next;
+        protected Node tail;
 
         public Node(int v) {
             this.value = v;
