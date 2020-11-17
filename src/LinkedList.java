@@ -1,7 +1,7 @@
 public class LinkedList {
 
-    private Node head;
-    private Node tail;
+    public Node head;
+    public Node tail;
 
     public int size(int index) {
         if (head == null) {
@@ -70,10 +70,7 @@ public class LinkedList {
         return head == null;
     }
 
-    public int pop(){
-        remove (0);
-        return get (0);
-    }
+
     public int remove(int index) {
         Node previouse = head;
         int count = 1;
@@ -99,26 +96,6 @@ public class LinkedList {
         System.out.println ("It contains: " + node.value);
     }
 
-
-    public void push(int value) {
-        add (0,value);
-
-
-    }
-
-    public int peek(){
-
-        return get (0);
-    }
-
-    public void prettyPrint2(){
-        System.out.print("\nLinkedlist After Push,Pop,Peek -> ");
-        Node n = head;
-        while(n != null) {
-            System.out.print ("Node ("+n.value+")->");
-            n = n.next;
-        }
-    }
 
 
     class Node {
