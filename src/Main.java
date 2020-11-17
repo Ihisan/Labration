@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 //        add(e) -> Lägger till element e till slutet av listan
 //        add(i, e) -> Lägger till element e till position/index i, element till "höger" om i flyttar ett steg till höger
 //        contains(e) -> true om e finns i listan annars false
@@ -16,20 +14,23 @@ public class Main {
         list.add (1);
         list.add(4);
         System.out.println ("Size: " +list.size (0));
-        System.out.println ("Empty?: " + list.empty ());
+        System.out.println ("Empty?: " + list.IsEmpty ());
         list.prettyPrint ();
         list.remove (0);
         list.prettyPrint ();
 
        //=========Funktioner med push(),pop(),peek()======
         Stack stack = new Stack ();
-        stack.push (10);
+        stack.push (1);
         stack.push (22);
         stack.push (9);
+        stack.push (88);
         stack.prettyPrint2 ();
-        System.out.print ("The first element in Linkedlist is: "+ stack.peek ()+" ->");
-        System.out.println ("Pop -> " + stack.pop ());
+        System.out.print ("\nThe first element in Linkedlist is: "+ stack.peek ()+" ->");
+        System.out.println ("Popped -> " + stack.pop ());
         stack.prettyPrint2 ();
+
+
 
 
 

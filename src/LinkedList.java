@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LinkedList {
 
     public Node head;
@@ -66,7 +68,8 @@ public class LinkedList {
         }
     }
 
-    public boolean empty() {
+
+    public boolean IsEmpty() {
         return head == null;
     }
 
@@ -76,7 +79,8 @@ public class LinkedList {
         int count = 1;
         while (get (0) < head.value - 1) {
             previouse = previouse.next;
-            count++;
+            previouse.value = count;
+            count--;
         }
         {
             Node current = previouse.next;
@@ -90,8 +94,9 @@ public class LinkedList {
     public void contains() {
         Node node = new Node (head.value);
         while (node.next != null) {
-            System.out.println ("It contains: " + node.value + true);
+            System.out.println ("It contains: " + node.value);
             node = node.next;
+
         }
         System.out.println ("It contains: " + node.value);
     }

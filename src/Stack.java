@@ -1,8 +1,16 @@
 public class Stack extends LinkedList {
+    Node node = head;
 
     public int pop(){
-        remove (-1);
-        return get (0);
+        int top = 0;
+        if (!IsEmpty ()){
+            int value = head.value;
+            head = head.next;
+            return value;
+
+        }
+        System.out.print (remove (top));
+         return peek ();
     }
 
 
@@ -18,7 +26,8 @@ public class Stack extends LinkedList {
 
 
     public void prettyPrint2(){
-        System.out.print("\nLinkedlist After Push,Pop,Peek -> ");
+        System.out.println ("\n----------------------------");
+        System.out.print("\nLinkedlist after Push,Pop,Peek -> ");
         Node n = head;
         while(n != null) {
             System.out.print ("Node ("+n.value+")->");
